@@ -31,11 +31,22 @@ struct cs_dbs_tuners {
 };
 
 /* Conservative governor macros */
-#define DEF_FREQUENCY_UP_THRESHOLD		(75)
-#define DEF_FREQUENCY_DOWN_THRESHOLD		(15)
+#define DEF_FREQUENCY_UP_THRESHOLD		(85)
+#define DEF_FREQUENCY_DOWN_THRESHOLD		(20)
 #define DEF_FREQUENCY_STEP			(5)
-#define DEF_SAMPLING_DOWN_FACTOR		(1)
+#define DEF_SAMPLING_DOWN_FACTOR		(3)
 #define MAX_SAMPLING_DOWN_FACTOR		(10)
+#define DEF_SMOOTH_UP				(75)
+#define DEF_SAMPLING_UP_FACTOR			(1)
+define MAX_SAMPLING_UP_FACTOR			(10)
+#define DEF_FAST_SCALING_UP			(0)
+#define DEF_FAST_SCALING_DOWN			(0)
+#define DEF_AFS_UP				(0)
+#define DEF_AFS_DOWN				(0)
+#define DEF_AFS_THRESHOLD1			(25)
+#define DEF_AFS_THRESHOLD2			(50)
+#define DEF_AFS_THRESHOLD3			(75)
+#define DEF_AFS_THRESHOLD4			(90)
 
 static inline unsigned int get_freq_step(struct cs_dbs_tuners *cs_tuners,
 					 struct cpufreq_policy *policy)
