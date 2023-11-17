@@ -38,7 +38,7 @@ struct cs_dbs_tuners {
 #define MAX_SAMPLING_DOWN_FACTOR		(10)
 #define DEF_SMOOTH_UP				(75)
 #define DEF_SAMPLING_UP_FACTOR			(1)
-define MAX_SAMPLING_UP_FACTOR			(10)
+#define MAX_SAMPLING_UP_FACTOR			(10)
 #define DEF_FAST_SCALING_UP			(0)
 #define DEF_FAST_SCALING_DOWN			(0)
 #define DEF_AFS_UP				(0)
