@@ -16,8 +16,8 @@
 #include "cpufreq_governor.h"
 
 /* Conservative governor macros */
-#define DEF_FREQUENCY_UP_THRESHOLD       (70)
-#define DEF_FREQUENCY_DOWN_THRESHOLD     (40)
+#define DEF_FREQUENCY_UP_THRESHOLD       (75)
+#define DEF_FREQUENCY_DOWN_THRESHOLD     (25)
 #define DEF_FREQUENCY_STEP               (5)
 #define DEF_SAMPLING_DOWN_FACTOR         (3)
 #define MAX_SAMPLING_DOWN_FACTOR         (10)
