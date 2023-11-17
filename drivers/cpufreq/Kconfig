@@ -76,6 +76,12 @@ config CPU_FREQ_DEFAULT_GOV_POWERSAVE
 	  the frequency statically to the lowest frequency supported by
 	  the CPU.
 
+config CPU_FREQ_DEFAULT_GOV_ABYSSPLUGV2
+	bool "abyssplugv2"
+	select CPU_FREQ_GOV_ABYSSPLUGV2
+	help
+	  Use the CPUFreq governor 'abyssplugv2' as default. 
+
 config CPU_FREQ_DEFAULT_GOV_USERSPACE
 	bool "userspace"
 	select CPU_FREQ_GOV_USERSPACE
@@ -152,14 +158,14 @@ config CPU_FREQ_GOV_POWERSAVE
 
 	  If in doubt, say Y.
 
-config CPU_FREQ_GOV_RAD
-	tristate "'rad' governor"
+config CPU_FREQ_GOV_ABYSSPLUGV2
+	tristate "'abyssplugv2' governor"
 	help
 	  This cpufreq governor sets the frequency statically to the
 	  lowest available CPU frequency.
 
 	  To compile this driver as a module, choose M here: the
-	  module will be called cpufreq_rad.
+	  module will be called cpufreq_abyssplugv2.
 
 	  If in doubt, say Y.
 
