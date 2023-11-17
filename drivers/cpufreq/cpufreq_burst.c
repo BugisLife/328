@@ -1,5 +1,5 @@
 /*
- * drivers/cpufreq/cpufreq_rad_thermal.c
+ * drivers/cpufreq/cpufreq_burst_thermal.c
  *
  * Copyright (C) 2001 Russell King
  *           (C) 2003 Venkatesh Pallipadi <venkatesh.pallipadi@intel.com>.
@@ -313,7 +313,7 @@ static void cs_start(struct cpufreq_policy *policy)
 }
 
 static struct dbs_governor cs_governor = {
-	.gov = CPUFREQ_DBS_GOVERNOR_INITIALIZER("rad"),
+	.gov = CPUFREQ_DBS_GOVERNOR_INITIALIZER("burst"),
 	.kobj_type = { .default_attrs = cs_attributes },
 	.gov_dbs_update = cs_dbs_update,
 	.alloc = cs_alloc,
@@ -323,28 +323,28 @@ static struct dbs_governor cs_governor = {
 	.start = cs_start,
 };
 
-#define CPU_FREQ_GOV_RAD	(&cs_governor.gov)
+#define CPU_FREQ_GOV_BURST	(&cs_governor.gov)
 
 static int __init cpufreq_gov_dbs_init(void)
 {
-	return cpufreq_register_governor(CPU_FREQ_GOV_RAD);
+	return cpufreq_register_governor(CPU_FREQ_GOV_BURST);
 }
 
 static void __exit cpufreq_gov_dbs_exit(void)
 {
-	cpufreq_unregister_governor(CPU_FREQ_GOV_RAD);
+	cpufreq_unregister_governor(CPU_FREQ_GOV_BURST);
 }
 
 MODULE_AUTHOR("Alexander Clouter <alex@digriz.org.uk>");
-MODULE_DESCRIPTION("'cpufreq_RAD' - A dynamic cpufreq governor for "
+MODULE_DESCRIPTION("'cpufreq_BURST' - A dynamic cpufreq governor for "
 		"Low Latency Frequency Transition capable processors "
 		"optimised for use in a battery environment");
 MODULE_LICENSE("GPL");
 
-#ifdef CONFIG_CPU_FREQ_DEFAULT_GOV_RAD
+#ifdef CONFIG_CPU_FREQ_DEFAULT_GOV_BURST
 struct cpufreq_governor *cpufreq_default_governor(void)
 {
-	return CPU_FREQ_GOV_RAD;
+	return CPU_FREQ_GOV_BURST;
 }
 
 fs_initcall(cpufreq_gov_dbs_init);
